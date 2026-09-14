@@ -7,10 +7,9 @@ plugins {
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
-	}
+// toolchain은 JDK 17이 설치돼 있어야 해서, 설치된 JDK(21 등)로 17 대상 컴파일
+tasks.withType(JavaCompile).configureEach {
+	options.release = 17
 }
 
 repositories {
