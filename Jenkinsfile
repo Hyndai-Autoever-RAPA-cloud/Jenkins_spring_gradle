@@ -14,10 +14,10 @@ pipeline {
                     string(credentialsId: 'ec2-host', variable: 'EC2_HOST'),
                     string(credentialsId: 'ec2-port', variable: 'EC2_PORT')
                 ]) {
-                    sh '''ssh -i "$SSH_KEY" -p "$EC2_PORT" -o StrictHostKeyChecking=no "${EC2_USER}@${EC2_HOST}" 'git clone https://깃헙URL' '''
-                    sh '''ssh -i "$SSH_KEY" -p "$EC2_PORT" -o StrictHostKeyChecking=no "${EC2_USER}@${EC2_HOST}" 'chmod 777 디렉토리/script.sh' '''
-                    sh '''ssh -i "$SSH_KEY" -p "$EC2_PORT" -o StrictHostKeyChecking=no "${EC2_USER}@${EC2_HOST}" '디렉토리/script.sh' '''
-                    sh '''ssh -i "$SSH_KEY" -p "$EC2_PORT" -o StrictHostKeyChecking=no "${EC2_USER}@${EC2_HOST}" 'rm -rf 디렉토리' '''
+                    sh '''ssh -i "$SSH_KEY" -p "$EC2_PORT" -o StrictHostKeyChecking=no "${EC2_USER}@${EC2_HOST}" 'git clone https://github.com/Hyndai-Autoever-RAPA-cloud/Jenkins_spring_gradle.git' '''
+                    sh '''ssh -i "$SSH_KEY" -p "$EC2_PORT" -o StrictHostKeyChecking=no "${EC2_USER}@${EC2_HOST}" 'chmod 777 Jenkins_spring_gradle/script.sh' '''
+                    sh '''ssh -i "$SSH_KEY" -p "$EC2_PORT" -o StrictHostKeyChecking=no "${EC2_USER}@${EC2_HOST}" 'Jenkins_spring_gradle/script.sh' '''
+                    sh '''ssh -i "$SSH_KEY" -p "$EC2_PORT" -o StrictHostKeyChecking=no "${EC2_USER}@${EC2_HOST}" 'rm -rf Jenkins_spring_gradle' '''
                 }
             }
         }
